@@ -1,16 +1,6 @@
 import { Component } from "react";
 import User from "./User";
 
-const DUMMY_USERS = [
-  {
-    name: 'RICK',
-    id: '1'
-  },
-  {
-    name: 'MORTY',
-    id: '2'
-  }
-]
 
 class Users extends Component {
 
@@ -32,7 +22,7 @@ class Users extends Component {
 
     const usersList = (
       <ul>
-        {DUMMY_USERS.map((user)=>(
+        {this.props.users.map((user)=>(
           <User key={user.id} name={user.name} />
         ))}
       </ul>
@@ -40,8 +30,11 @@ class Users extends Component {
 
     return(
       <div>
+        
         <button onClick={this.toggleUserHandler.bind(this)}>{this.state.showUsers ? 'Hide' : 'Show'} Users</button>
+
         {this.state.showUsers && usersList}
+      
       </div>
     )
   }
