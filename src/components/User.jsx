@@ -6,3 +6,5 @@ class User extends Component {
     return <li>{this.props.name}</li>
   }
 }
+
+export default User;

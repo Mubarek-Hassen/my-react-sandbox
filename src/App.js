@@ -2,6 +2,7 @@
 // import React,{ useState } from "react";
 // import Button from "./UI/Button";
 import { Component } from "react";
+import Users from "./components/Users";
 
 
 // function App() {
@@ -24,7 +25,7 @@ import { Component } from "react";
 // Hooks were introduced at react 16.8
 class App extends Component {
   render(){
-    return <h2> Hi React Class</h2>
+    return <Users/>
   }
 } 
 
