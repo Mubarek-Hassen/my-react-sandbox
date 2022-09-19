@@ -5,7 +5,7 @@ import User from "./User";
 class Users extends Component {
 
   constructor(){
-    super()
+    super();
     this.state = {
       showUsers: true,
 
