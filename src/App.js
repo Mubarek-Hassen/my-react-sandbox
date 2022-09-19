@@ -3,6 +3,7 @@
 // import Button from "./UI/Button";
 import { Component } from "react";
 import UserFinder from "./components/UserFinder";
+import UsersContext from "./store/users-context";
 // import Users from "./components/Users";
 
 
@@ -24,11 +25,34 @@ import UserFinder from "./components/UserFinder";
 // Had to use class based components before react 16.8
 
 // Hooks were introduced at react 16.8
-
-class App extends Component {
-  render(){
-    return <UserFinder/>
+const DUMMY_USERS = [
+  {
+    name: 'Rick',
+    id: '1'
+  },
+  {
+    name: 'Morty',
+    id: '2'
+  },
+  {
+    name: 'Squanchy',
+    id: '3'
   }
+];
+
+const usersContext = {
+  users: DUMMY_USERS
+}
+class App extends Component {
+
+  render(){
+    return (
+    <UsersContext.Provider value={usersContext}>
+    <UserFinder/>
+    </UsersContext.Provider>
+    )
+  }
+
 } 
 
 export default App;
