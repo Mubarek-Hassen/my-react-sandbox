@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react"
 
 const SimpleInput=(props)=>{
-  const nameInputRef = useRef()
+  // const nameInputRef = useRef()
   const [enteredName, setEnteredName] = useState('')
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
   const [enteredNameTouched, setEnteredNameTouched] = useState(false);
@@ -24,16 +24,17 @@ const SimpleInput=(props)=>{
     }
     setEnteredNameIsValid(true)
     console.log(enteredName)
-    const enteredValue = nameInputRef.current.value;
-    console.log(enteredValue)
-    setEnteredName('')
+    // const enteredValue = nameInputRef.current.value;
+    // console.log(enteredValue)
+    setEnteredName("")
   }
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
   return (
     <form onSubmit={ formSubmission }>
       <div>
         <label htmlFor="name"> Your Name</label>
-        <input ref={nameInputRef} type="text" onChange={ nameInputChangeHandler } />
+        <input  type="text" value={enteredName} onChange={ nameInputChangeHandler } />
+        {/* ref={nameInputRef} - inside input */}
       </div>
       {nameInputIsInvalid && <p>Name must not be empty.</p>}
       <div>
