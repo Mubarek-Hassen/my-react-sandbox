@@ -1,4 +1,8 @@
+import useInputTwo from "../hooks/use-InputTwo";
+
 const BasicForm =(props)=>{
+  const {} = useInputTwo()
+  
   return (
     <form>
       <div>
