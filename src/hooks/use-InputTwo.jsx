@@ -19,7 +19,6 @@ const useInputTwo =(validatingFunc)=>{
     setEnteredVal("")
     setIsTouch(false)
   }
-
   return {
     val: enteredVal, isValid: valIsValid, valHasError, resetter, blurHandler, changeHandle
   }
