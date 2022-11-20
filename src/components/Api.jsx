@@ -5,8 +5,12 @@ const Api = () =>{
   const {data: posts, loading: loadingPosts, error: errorPosts} = useFetch('https://jsonplaceholder.typicode.com/posts')
 
   return (
-    <section>
-    {todos && todos.map((todo)=> <ul><li key={todo.id}>{todo.id}. {todo.title}</li></ul>  )}
+    <section className="apis">
+      <div className="listed">{todos && todos.map((todo)=> <ul><li key={todo.id}>{todo.id}. {todo.title}</li></ul>  )}</div>
+      <div className="listed">
+        {posts && posts.map((post)=>  <ul><li key={post.id}>{post.id} - {post.title} mmmmmm</li></ul>)}
+      </div>
+    
 
     </section>
   )
