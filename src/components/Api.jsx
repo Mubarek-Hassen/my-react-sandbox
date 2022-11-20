@@ -6,12 +6,19 @@ const Api = () =>{
 
   return (
     <section className="apis">
-      <div className="listed">{todos && todos.map((todo)=> <ul><li key={todo.id}>{todo.id}. {todo.title}</li></ul>  )}</div>
       <div className="listed">
-        {posts && posts.map((post)=>  <ul><li key={post.id}>{post.id} - {post.title} mmmmmm</li></ul>)}
+        {loadingTodos && <div>{loadingTodos}</div>}
+        <ul>{todos && todos.map(todo=> <li key={todo.id}>{todo.id}. {todo.title}</li>)}</ul>
+      {errorTodos && <div>{errorTodos}</div>}
       </div>
-    
 
+      <div className="listed">
+        {loadingPosts && <div>{loadingPosts}</div>}
+        {errorPosts && <p>Something is wrong!</p> }
+        <ul>
+          {posts && posts.map(post=> <li key={post.id}> {post.id} - {post.title}</li>)}
+        </ul>
+      </div>
     </section>
   )
 }
